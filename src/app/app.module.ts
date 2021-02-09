@@ -6,14 +6,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material';
-import { SetupRacketComponent } from './setup-racket/setup-racket.component';
-import { AboutGuideComponent } from './about-guide/about-guide.component';
+
+import { AboutGuideComponent } from './courses/about-guide/about-guide.component';
+import { SetupRacketComponent } from './courses/setup-racket/setup-racket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SetupRacketComponent,
-    AboutGuideComponent
+    AboutGuideComponent,
+    SetupRacketComponent
   ],
   imports: [
     BrowserModule,

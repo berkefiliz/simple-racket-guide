@@ -7,5 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pywracket';
-  courseTitles: string[] = ['Course Name 1'];
+
+  ESSENTIALS = [
+    {title: "About the guide", link: "about-the-guide"},
+    {title: "Setting up Dr Racket", link: "setup-racket"},
+  ];
+
+  COURSES = [
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+  ];
 }

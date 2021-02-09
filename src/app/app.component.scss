@@ -1,3 +1,10 @@
+p {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+// ##########################33
+
 .spacer {
     flex: 1 1 auto;
 }
@@ -10,7 +17,25 @@
     height: 100%;
 }
 
+.drawer-icon {
+    font-size: 20px;
+}
+
+.drawer-separator {
+    background-color: #EEEEEE;
+    font-size: 16px;
+}
+
 .sidebar {
     width: 300px;
     padding: 0;
+}
+
+.material-icons{
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.mat-tab-group {
+    margin-bottom: 48px;
 }
