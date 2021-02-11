@@ -1,33 +1,32 @@
-<mat-toolbar color="primary" style="user-select: none;">
-  <button mat-icon-button aria-label="Logo">
-    <mat-icon>school</mat-icon>
-  </button>
-  <span>Simple Racket Guide</span>
-  <span class="spacer"></span>
-  <button mat-icon-button aria-label="Favourite">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button aria-label="Share">
-    <mat-icon>share</mat-icon>
-  </button>
-</mat-toolbar>
+<mat-sidebar-container [ngClass]="{'dark-theme-mode':isDarkTheme}" class="mat-app-background" style="display:flex; flex-flow:column; height:100%">
+  <mat-toolbar color="primary" style="user-select: none;">
+    <button mat-icon-button aria-label="Logo">
+      <mat-icon>school</mat-icon>
+    </button>
+    <span>Simple Racket Guide</span>
+    <span class="spacer"></span>
+    <mat-slide-toggle [(ngModel)]="isDarkTheme" (change)="storeThemeSelection()" labelPosition="before">
+      Dark theme
+    </mat-slide-toggle>
+  </mat-toolbar>
 
-<mat-drawer-container class="drawer-container">
-  <mat-drawer mode="side" opened>
-    <mat-selection-list #shoes [multiple]="false" class="sidebar">
-      <mat-card class="drawer-separator"><mat-icon class="drawer-icon">dynamic_form</mat-icon>ESSENTIALS</mat-card>
-      <mat-list-option style="border-bottom: 1px solid #EEEEEE;" *ngFor="let course of ESSENTIALS" [value]="course" routerLink="/{{course.link}}">
-        {{course.title}}
-      </mat-list-option>
-      <mat-card class="drawer-separator"><mat-icon class="drawer-icon">fact_check</mat-icon>RACKET BASICS</mat-card>
-      <mat-list-option style="border-bottom: 1px solid #EEEEEE;" *ngFor="let course of COURSES" [value]="course">
-        {{course.title}}
-      </mat-list-option>
-    </mat-selection-list>
-  </mat-drawer>
-  <mat-drawer-content style="padding: 40px 12%;">
-    <router-outlet>
-      <!-- Content here -->
-    </router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+  <mat-drawer-container class="drawer-container">
+    <mat-drawer mode="side" opened>
+      <mat-selection-list #shoes [multiple]="false" class="sidebar">
+        <mat-card class="drawer-separator"><mat-icon class="drawer-icon">dynamic_form</mat-icon>ESSENTIALS</mat-card>
+        <mat-list-option style="border-bottom: 1px solid #EEEEEE;" *ngFor="let course of ESSENTIALS" [value]="course" routerLink="/{{course.link}}">
+          {{course.title}}
+        </mat-list-option>
+        <mat-card class="drawer-separator"><mat-icon class="drawer-icon">fact_check</mat-icon>RACKET BASICS</mat-card>
+        <mat-list-option style="border-bottom: 1px solid #EEEEEE;" *ngFor="let course of COURSES" [value]="course">
+          {{course.title}}
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-drawer>
+    <mat-drawer-content style="padding: 40px 12%;">
+      <router-outlet>
+        <!-- Content here -->
+      </router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</mat-sidebar-container>

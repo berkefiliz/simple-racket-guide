@@ -2,3 +2,36 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Light theme
+$racket-app-primary: mat-palette($mat-deep-purple);
+$racket-app-accent:  mat-palette($mat-orange);
+$racket-app-warn:    mat-palette($mat-red);
+$racket-app-theme:   mat-light-theme((
+  color: (
+    primary: $racket-app-primary,
+    accent: $racket-app-accent,
+    warn: $racket-app-warn,  
+  )
+));
+@include angular-material-theme($racket-app-theme);
+
+
+// Dark theme
+$racket-app-primary-dark: mat-palette($mat-grey);
+$racket-app-accent-dark:  mat-palette($mat-orange);
+$racket-app-warn-dark:    mat-palette($mat-red);
+$racket-app-theme-dark:   mat-dark-theme((
+  color: (
+    primary: $racket-app-primary-dark,
+    accent: $racket-app-accent-dark,
+    warn: $racket-app-warn-dark,  
+  )
+));
+.dark-theme-mode {
+    @include angular-material-theme($racket-app-theme-dark);
+}

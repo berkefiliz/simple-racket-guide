@@ -6,7 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pywracket';
+
+  isDarkTheme: boolean = false;
+
+  ngOnInit() {
+    this.isDarkTheme = localStorage.getItem('theme') === "Dark" ? true : false;
+  }
+
+  storeThemeSelection() {
+    localStorage.setItem('theme', this.isDarkTheme ? "Dark" : "Light");
+    console.log(localStorage.getItem('theme'));
+  }
 
   ESSENTIALS = [
     {title: "Welcome", link: ""},
