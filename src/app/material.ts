@@ -1,5 +1,6 @@
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card'; 
+import { MatGridListModule } from '@angular/material/grid-list'; 
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list'; 
 import { MatSidenavModule } from '@angular/material/sidenav'; 
@@ -12,6 +13,7 @@ import { NgModule } from '@angular/core';
   imports: [
     MatButtonModule,
     MatCardModule,
+    MatGridListModule,
     MatIconModule,
     MatListModule,
     MatSidenavModule,
@@ -21,6 +23,7 @@ import { NgModule } from '@angular/core';
   exports: [
     MatButtonModule,
     MatCardModule,
+    MatGridListModule,
     MatIconModule,
     MatListModule,
     MatSidenavModule,

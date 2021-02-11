@@ -9,12 +9,14 @@ import { MaterialModule } from './material';
 
 import { AboutGuideComponent } from './courses/about-guide/about-guide.component';
 import { SetupRacketComponent } from './courses/setup-racket/setup-racket.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutGuideComponent,
-    SetupRacketComponent
+    SetupRacketComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,

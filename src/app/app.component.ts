@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'pywracket';
 
   ESSENTIALS = [
+    {title: "Welcome", link: ""},
     {title: "About the guide", link: "about-the-guide"},
     {title: "Setting up Dr Racket", link: "setup-racket"},
   ];

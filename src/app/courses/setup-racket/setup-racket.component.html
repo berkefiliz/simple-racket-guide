@@ -1,22 +1,55 @@
 <div style="width: 100%; text-align: center">
     <h1>Setting up Racket</h1>
 </div>
-<mat-tab-group mat-align-tabs="center">
+<mat-tab-group mat-align-tabs="center" dynamicHeight>
     <mat-tab label="Overview"><br>
-        <p>
-            Sed pellentesque urna vel sem tempus, quis molestie neque scelerisque. Nullam eget est sit amet eros scelerisque accumsan eu vel massa. Vestibulum ut tellus mi. Maecenas et orci non lectus maximus sodales. Curabitur fringilla, nulla a sodales tincidunt, velit mauris sagittis mi, non pretium leo diam ac magna. Suspendisse feugiat fringilla est, at consequat ante pharetra sed. Nunc luctus tincidunt enim id mollis. Nunc ultricies velit et eros luctus suscipit. Cras feugiat est ex. Quisque odio diam, pretium eget lectus id, mollis euismod metus. Vivamus efficitur aliquam purus sit amet dictum. Integer dapibus lacus ut tellus sagittis, ut ornare augue scelerisque.
-            <br><br>
-            Nam mollis urna tincidunt tempus dapibus. Suspendisse ac tortor ac nisi tempus egestas. Sed dictum mi nec velit tincidunt elementum. Etiam quam lorem, tristique ut erat vitae, vestibulum tincidunt velit. Maecenas sollicitudin gravida lectus sit amet imperdiet. Sed cursus dolor erat, scelerisque tincidunt ligula vestibulum sit amet. Quisque maximus facilisis libero, a scelerisque leo placerat quis.
-            <br><br>
-            Etiam sit amet risus laoreet, convallis felis id, vestibulum arcu. Ut a leo vitae ex laoreet facilisis. Ut faucibus augue nisl, in dignissim magna molestie nec. Nulla ut congue augue. Proin elit nulla, ultrices vitae odio a, porttitor tempor magna. Pellentesque rutrum sollicitudin pharetra. Sed pretium nisl ac leo sodales sagittis. Maecenas sit amet imperdiet magna. Donec sem risus, ultricies a imperdiet et, dictum in mauris. Etiam gravida quam augue, at tempus nibh iaculis non. Duis ac ultricies ante. Sed viverra sed quam id molestie. Maecenas eget efficitur orci, in malesuada nunc. Aliquam in risus volutpat, mattis quam nec, gravida sem. Etiam eget porttitor ante, sit amet ullamcorper enim.
-            <br><br>
-            Duis sagittis magna eu tortor sagittis pharetra. Aliquam eu turpis nec nunc fermentum accumsan. Donec nec justo eros. Curabitur vel lectus at massa varius cursus. Aliquam erat volutpat. In id velit pharetra, ultricies ipsum nec, imperdiet tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin consequat velit vel augue volutpat, at efficitur justo mattis. In orci felis, finibus vestibulum dignissim eget, condimentum et elit. Proin et nisl eu urna consectetur semper in eu dolor. Duis bibendum enim eget justo tincidunt pretium. Cras malesuada augue in arcu facilisis porta. Phasellus semper leo sed quam vulputate, fermentum congue velit dapibus. Vestibulum rutrum vel lacus viverra blandit. 
-        </p>
+        <h3>Download Dr Racket</h3>
+        <p>You can use this link to download the latest version of Dr Racket.</p>
+        <p>I think it is important to make a distinction here. Dr Racket is an IDE (or the program that can interpret the programming language). Plus, IDEs often have some helpful tools like autocomplete that come with them. Without any interpreter you will not be able to run your code. Racket is the name of the programming language. More specifically, Typed Racket is the name of the programming language this guide will focus on. There is a slight difference between the two, which will be discussed later in the guide.</p>
+        <br>
+        <h3>Install Dr Racket</h3>
+        <p>Once the download is complete, run the file and follow the instructions.</p>
+        <p>It should be straightforward, but I plan on adding a FAQ section here.</p>
+        <br>
+        <h3>Declare the language you use</h3>
+        <p>Add "<span class="t-b">#lang typed/racket</span>" at the top of your document.</p>
+        <p>This is necessary, so that the IDE knows whether to interpret Racket or Typed Racket. In that sense, you have to add this line at the top of every document you have (assuming you want to use Typed Racket). If you do not want to copy-paste this line every single time you open a project, there is a way to automatize it!</p>
+        <ol>
+            <li><p>Open Dr Racket.</p></li>
+            <li><p>Click on “Determine language from source” in the bottom-left corner.</p></li>
+            <li><p>Click on “Choose Language...”</p></li>
+            <li><p>Click on ”Show Details”</p></li>
+            <li><p>On bottom-right, type “#lang typed/racket” in “Automatic #lang line”</p></li>
+            <li><p>Click on OK</p></li>
+            <li><p>Open a new Racket project to test if it is working.</p></li>
+        </ol>
+        <br>
+        <h3>Import required libraries</h3>
+        <p>Racket comes with some built-in functions which we refer as the "base" functions of this language. Of course, there are extra functionality of the language which are not included by default and/or created by a third party. Those are called libraries. In this guide you will only need three of them:</p>
+        <ul>
+            <li><p><span class="t-b">typed/2htdp/image</span> deals with images.</p></li>
+            <li><p><span class="t-b">typed/2htdp/universe</span> deals with big-bang, keystroke handlers, clock-tick handlers, etc.</p></li>
+            <li><p><span class="t-b">typed/test-engine/racket-tests</span> deals with unit tests, e.g. check-expect and check-within.</p></li>
+        </ul>
+        <p>In order to include these libraries inside your code, you need to use the "require" function. The syntax is simple:</p>
+        <ul class="code">
+            <pre><li><p>(<span class="t-b">require</span> library_name)</p></li></pre>
+        </ul>
+        <p>For instance, if you work with images in your code:</p>
+        <ul class="code">
+            <pre><li><p>(<span class="t-b">require typed/2htdp/image</span>)</p></li></pre>
+        </ul>
+        <p>If you want to import multiple libraries, you do not need to type "require" over and over:</p>
+        <ul class="code">
+            <pre><li><p>(<span class="t-b">require typed/2htdp/image
+         typed/2htdp/universe
+         typed/test-engine/racket-tests</span>)</p></li></pre>
+        </ul>
+        <br>
+        <h3>You are all set up!</h3>
+        <p>Good luck! Remember that practice makes perfect :)</p>      
     </mat-tab>
-    <mat-tab label="Acknowledgements"><br>
-        Content 2
-    </mat-tab>
-    <mat-tab label="Other resources"><br>
-        Content 3
-    </mat-tab>
-  </mat-tab-group>
+</mat-tab-group>
+
+<br>
+<br>
