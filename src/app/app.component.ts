@@ -33,5 +33,15 @@ export class AppComponent {
     {title: "Placeholder", link: ""},
     {title: "Placeholder", link: ""},
     {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
   ];
 }

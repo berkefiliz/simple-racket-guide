@@ -6,19 +6,19 @@
     <span>Simple Racket Guide</span>
     <span class="spacer"></span>
     <mat-slide-toggle [(ngModel)]="isDarkTheme" (change)="storeThemeSelection()" labelPosition="before">
-      Dark theme
+      Night mode
     </mat-slide-toggle>
   </mat-toolbar>
 
   <mat-drawer-container class="drawer-container">
     <mat-drawer mode="side" opened>
       <mat-selection-list #shoes [multiple]="false" class="sidebar">
-        <mat-card class="drawer-separator"><mat-icon class="drawer-icon">dynamic_form</mat-icon>ESSENTIALS</mat-card>
-        <mat-list-option style="border-bottom: 1px solid #EEEEEE;" *ngFor="let course of ESSENTIALS" [value]="course" routerLink="/{{course.link}}">
+        <div class="drawer-separator"><mat-icon class="drawer-icon">dynamic_form</mat-icon>ESSENTIALS</div>
+        <mat-list-option style="border-bottom: 1px solid rgba(127,127,127,.2);" *ngFor="let course of ESSENTIALS" [value]="course" routerLink="/{{course.link}}">
           {{course.title}}
         </mat-list-option>
-        <mat-card class="drawer-separator"><mat-icon class="drawer-icon">fact_check</mat-icon>RACKET BASICS</mat-card>
-        <mat-list-option style="border-bottom: 1px solid #EEEEEE;" *ngFor="let course of COURSES" [value]="course">
+        <div class="drawer-separator"><mat-icon class="drawer-icon">fact_check</mat-icon>RACKET BASICS</div>
+        <mat-list-option style="border-bottom: 1px solid rgba(127,127,127,.2);" *ngFor="let course of COURSES" [value]="course">
           {{course.title}}
         </mat-list-option>
       </mat-selection-list>

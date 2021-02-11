@@ -22,8 +22,8 @@ $racket-app-theme:   mat-light-theme((
 
 
 // Dark theme
-$racket-app-primary-dark: mat-palette($mat-grey);
-$racket-app-accent-dark:  mat-palette($mat-orange);
+$racket-app-primary-dark: mat-palette($mat-grey, darker);
+$racket-app-accent-dark:  mat-palette($mat-deep-purple);
 $racket-app-warn-dark:    mat-palette($mat-red);
 $racket-app-theme-dark:   mat-dark-theme((
   color: (

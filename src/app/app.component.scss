@@ -18,9 +18,13 @@ h3 {
 
 ul.code {
     list-style: none;
-    border: 1px solid #DDD;
+    border: 1px solid rgba(127,127,127,.3);
     border-radius: 10px;
     padding-top: 10px;
+}
+
+pre {
+    margin: 0;
 }
 
 ul.code p {
@@ -30,7 +34,7 @@ ul.code p {
 // #############################
 
 .t-b {
-    color: #7777FF;
+    color: #7979FF;
 }
 
 // #############################
@@ -52,8 +56,9 @@ ul.code p {
 }
 
 .drawer-separator {
-    filter: brightness(95%);
+    margin: 24px 0 6px 16px;
     font-size: 16px;
+    font-weight: 500;
 }
 
 .sidebar {
