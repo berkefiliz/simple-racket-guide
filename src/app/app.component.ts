@@ -44,4 +44,13 @@ export class AppComponent {
     {title: "Placeholder", link: ""},
     {title: "Placeholder", link: ""},
   ];
+
+  EXERCISES = [
+    {title: "Racket Basics", link: "exercise1"},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+    {title: "Placeholder", link: ""},
+  ];
+
 }

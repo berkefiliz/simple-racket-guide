@@ -18,7 +18,11 @@
           {{course.title}}
         </mat-list-option>
         <div class="drawer-separator"><mat-icon class="drawer-icon">fact_check</mat-icon>RACKET BASICS</div>
-        <mat-list-option style="border-bottom: 1px solid rgba(127,127,127,.2);" *ngFor="let course of COURSES" [value]="course">
+        <mat-list-option style="border-bottom: 1px solid rgba(127,127,127,.2);" *ngFor="let course of COURSES" [value]="course" routerLink="/{{course.link}}">
+          {{course.title}}
+        </mat-list-option>
+        <div class="drawer-separator"><mat-icon class="drawer-icon">quiz</mat-icon>EXERCISES</div>
+        <mat-list-option style="border-bottom: 1px solid rgba(127,127,127,.2);" *ngFor="let course of EXERCISES" [value]="course" routerLink="/{{course.link}}">
           {{course.title}}
         </mat-list-option>
       </mat-selection-list>
