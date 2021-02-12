@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,26 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   isDarkTheme: boolean = false;
+  isMobile: boolean = false;
 
   ngOnInit() {
     this.isDarkTheme = localStorage.getItem('theme') === "Dark" ? true : false;
+
+    if (window.innerWidth < 1000) {
+      this.isMobile = true;
+    }
+  }
+
+  @ViewChild('sidebarMobile') sbMob: any;
+  @ViewChild('sidebarPc') sbPc: any;
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.isMobile = (window.innerWidth < 1000);
   }
 
   storeThemeSelection() {
     localStorage.setItem('theme', this.isDarkTheme ? "Dark" : "Light");
-    console.log(localStorage.getItem('theme'));
   }
 
   ESSENTIALS = [

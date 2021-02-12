@@ -1,18 +1,21 @@
 <mat-sidebar-container [ngClass]="{'dark-theme-mode':isDarkTheme}" class="mat-app-background" style="display:flex; flex-flow:column; height:100%">
   <mat-toolbar color="primary" style="user-select: none;">
-    <button mat-icon-button aria-label="Logo">
+    <button mat-icon-button aria-label="Logo" *ngIf="isMobile" (click)="sbMob.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Logo" *ngIf="!isMobile" routerLink="/">
       <mat-icon>school</mat-icon>
     </button>
-    <span>Simple Racket Guide</span>
+    <span class="appName">Simple Racket Guide</span>
     <span class="spacer"></span>
-    <mat-slide-toggle [(ngModel)]="isDarkTheme" (change)="storeThemeSelection()" labelPosition="before">
+    <mat-slide-toggle class="tbText" [(ngModel)]="isDarkTheme" (change)="storeThemeSelection()" labelPosition="before">
       Night mode
     </mat-slide-toggle>
   </mat-toolbar>
-
-  <mat-drawer-container class="drawer-container">
-    <mat-drawer mode="side" opened>
-      <mat-selection-list #shoes [multiple]="false" class="sidebar">
+  
+  <mat-drawer-container class="drawer-container" *ngIf="isMobile">
+    <mat-drawer mode="side" [mode]="'push'" #sidebarMobile>
+      <mat-selection-list #allcourses [multiple]="false" class="sidebar">
         <div class="drawer-separator"><mat-icon class="drawer-icon">dynamic_form</mat-icon>ESSENTIALS</div>
         <mat-list-option style="border-bottom: 1px solid rgba(127,127,127,.2);" *ngFor="let course of ESSENTIALS" [value]="course" routerLink="/{{course.link}}">
           {{course.title}}
@@ -33,4 +36,29 @@
       </router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>
+
+  <mat-drawer-container class="drawer-container" *ngIf="!isMobile">
+    <mat-drawer mode="side" opened #sidebarPc>
+      <mat-selection-list #allcourses [multiple]="false" class="sidebar">
+        <div class="drawer-separator"><mat-icon class="drawer-icon">dynamic_form</mat-icon>ESSENTIALS</div>
+        <mat-list-option style="border-bottom: 1px solid rgba(127,127,127,.2);" *ngFor="let course of ESSENTIALS" [value]="course" routerLink="/{{course.link}}">
+          {{course.title}}
+        </mat-list-option>
+        <div class="drawer-separator"><mat-icon class="drawer-icon">fact_check</mat-icon>RACKET BASICS</div>
+        <mat-list-option style="border-bottom: 1px solid rgba(127,127,127,.2);" *ngFor="let course of COURSES" [value]="course" routerLink="/{{course.link}}">
+          {{course.title}}
+        </mat-list-option>
+        <div class="drawer-separator"><mat-icon class="drawer-icon">quiz</mat-icon>EXERCISES</div>
+        <mat-list-option style="border-bottom: 1px solid rgba(127,127,127,.2);" *ngFor="let course of EXERCISES" [value]="course" routerLink="/{{course.link}}">
+          {{course.title}}
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-drawer>
+    <mat-drawer-content style="padding: 40px 12%;">
+      <router-outlet>
+        <!-- Content here -->
+      </router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
 </mat-sidebar-container>

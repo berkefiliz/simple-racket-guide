@@ -36,6 +36,34 @@ ul.code p {
     font-family: monospace;
 }
 
+@media only screen and (max-width: 1000px) {
+    p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    ul.code p {
+        font-size: 14px;
+    }
+
+    .appName {
+        font-size: 16px;
+    }
+
+    .tbText {
+        font-size: 14px;
+    }
+}
+
 // #############################
 
 .t-b {
