@@ -1,109 +1,155 @@
 * {
-    transition: background-color 0.1s, color 0.1s;
+  transition: background-color 0.1s, color 0.1s;
 }
 
 a {
-    text-decoration: underline;
-    color: #7979FF;
+  text-decoration: underline;
+  color: #7979ff;
 }
 
 p {
-    font-size: 18px;
-    line-height: 34px;
+  font-size: 18px;
+  line-height: 34px;
 }
 
 h1 {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 h3 {
-    font-size: 20px;
-    font-weight: 500;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 ul.code {
-    list-style: none;
-    border: 1px solid rgba(127,127,127,.3);
-    border-radius: 10px;
-    padding-top: 10px;
+  list-style: none;
+  border: 1px solid rgba(127, 127, 127, 0.3);
+  border-radius: 10px;
+  overflow-x: auto;
+  padding: 10px 0 0 20px;
 }
 
 pre {
-    margin: 0;
+  margin: 0;
 }
 
 ul.code p {
-    font-family: monospace;
+  font-family: monospace;
 }
 
 @media only screen and (max-width: 1000px) {
-    p {
-        font-size: 16px;
-        line-height: 26px;
-    }
-    
-    h1 {
-        font-size: 24px;
-    }
-    
-    h3 {
-        font-size: 18px;
-        font-weight: 500;
-    }
-    
-    ul.code p {
-        font-size: 14px;
-    }
+  p {
+    font-size: 16px;
+    line-height: 26px;
+  }
 
-    .appName {
-        font-size: 16px;
-    }
+  h1 {
+    font-size: 24px;
+  }
 
-    .tbText {
-        font-size: 14px;
-    }
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  ul.code p {
+    font-size: 14px;
+  }
+
+  .appName {
+    font-size: 16px;
+  }
+
+  .tbText {
+    font-size: 14px;
+  }
 }
 
 // #############################
 
 .t-b {
-    color: #7979FF;
+  color: #7979ff;
 }
 
 // #############################
 
 .spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .drawer-container {
-    top:0;
-    left:0;
-    margin: 0;
-    width: 100%;
-    flex: 1;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  flex: 1;
 }
 
 .drawer-icon {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .drawer-separator {
-    margin: 24px 0 6px 16px;
-    font-size: 16px;
-    font-weight: 500;
+  padding-top: 24px;
+  margin: 0 0 6px 16px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .sidebar {
-    width: 300px;
-    padding: 0;
+  width: 300px;
+  padding: 0;
 }
 
 .material-icons {
-    display: inline-flex;
-    vertical-align: middle;
+  display: inline-flex;
+  vertical-align: middle;
 }
 
 .mat-tab-group {
-    margin-bottom: 48px;
+  margin-bottom: 48px;
+}
+
+.welcome-card-holder {
+  align-items: center;
+  margin-top: 30px;
+}
+
+.welcome-card {
+  cursor: pointer;
+  text-align: center;
+
+  width: 300px;
+  height: 300px;
+  line-height: 300px;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media only screen and (max-width: 1000px) {
+  .welcome-card {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .welcome-card-holder {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .welcome-card {
+    cursor: pointer;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+  }
 }

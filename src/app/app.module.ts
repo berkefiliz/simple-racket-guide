@@ -24,7 +24,7 @@ import { Quiz1Component } from './exercises/quiz1/quiz1.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

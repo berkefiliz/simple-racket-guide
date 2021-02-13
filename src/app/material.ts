@@ -1,6 +1,7 @@
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card'; 
+import { MatCardModule } from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core'; 
 import { MatGridListModule } from '@angular/material/grid-list'; 
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list'; 
@@ -16,6 +17,7 @@ import { NgModule } from '@angular/core';
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    MatRippleModule,
     MatGridListModule,
     MatIconModule,
     MatListModule,
@@ -28,6 +30,7 @@ import { NgModule } from '@angular/core';
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    MatRippleModule,
     MatGridListModule,
     MatIconModule,
     MatListModule,
