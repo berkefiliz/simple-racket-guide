@@ -120,8 +120,10 @@ ul.code p {
   text-align: center;
 
   width: 300px;
-  height: 300px;
-  line-height: 300px;
+  height: 100px;
+  line-height: 100px;
+
+  font-size: 20px;
 
   user-select: none;
   -webkit-user-select: none;
@@ -150,7 +152,5 @@ ul.code p {
     cursor: pointer;
     text-align: center;
     width: 300px;
-    height: 300px;
-    line-height: 300px;
   }
 }

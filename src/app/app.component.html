@@ -14,7 +14,7 @@
   </mat-toolbar>
   
   <mat-drawer-container class="drawer-container" *ngIf="isMobile">
-    <mat-drawer mode="side" [mode]="'push'" #sidebarMobile>
+    <mat-drawer mode="side" [mode]="'over'" #sidebarMobile>
       <mat-selection-list #allcourses [multiple]="false" class="sidebar">
         <div class="drawer-separator"><mat-icon class="drawer-icon">dynamic_form</mat-icon>ESSENTIALS</div>
         <mat-list-option style="border-bottom: 1px solid rgba(127,127,127,.2);" *ngFor="let course of ESSENTIALS" [value]="course" routerLink="/{{course.link}}">
