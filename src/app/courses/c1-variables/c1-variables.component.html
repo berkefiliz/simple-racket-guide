@@ -1,0 +1,127 @@
+<div style="width: 100%; text-align: center">
+    <h1>Variable Types</h1>
+</div>
+<mat-tab-group mat-align-tabs="center" dynamicHeight>
+    <mat-tab label="Overview"><br>
+        <h3>First of all, what is a variable?</h3>
+        <p>In simple words, a variable is something that holds a value. Think of a simple maths function:</p>
+        <ul class="code">
+            <li><p>f(x) = 2x + 1</p></li>
+        </ul>
+        <p>In this case, the value of x can be changed to a number, and hence the value of f(x) will change accordingly. If you set x=0, f(x) will be equal to 1. Similarly, in code, you can assign a value to a variable.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">define myVar 7</span>)</p></li>
+        </ul>
+        <p>In the above code, the value 7 is assigned to a variable named myVar. For the rest of the code, every time myVar is mentioned, Dr Racket will interpret it as 7, instead of a literal text "myVar"</p>
+        <br>
+        <h3>What are variable types?</h3>
+        <p>To give a short answer, a variable type refers to the type of the data it stores. If a variable stores only integers and nothing else, then we can say that the variable's type is integer. There are slight differences between programming languages on how specific those distinctions are, but here are the basic types of variables in Typed Racket. Later in this page, I will discuss those variables further:</p>
+        <ul>
+            <li><p>Integer: A number without decimal points. (ex: 3, 0, -71)</p></li>
+            <li><p>Real: A number with decimal points. (ex: 3, 3.0, 0.23, 2/3)</p></li>
+            <li><p>Char: A character, written after the #\ symbols. (ex: #\A, #\+, #\\, #\ )</p></li>
+            <li><p>String: A list of characters, written between quotation marks. (ex: "Hi", "Hello world", "", "5")</p></li>
+            <li><p>Image: An image.</p></li>
+        </ul>
+        <p>I highly recommend checking out <a href="https://docs.racket-lang.org/guide/datatypes.html">the official documentation</a> about variables.</p>
+        <br>
+        <h3>Number (Integer and Real)</h3>
+        <p>A Real refers to any real number, while Integer refers to real numbers with no decimal points. Numbers do not require an additional symbol to declare, so you can directly type a number. If you are familiar with hex numbers or other bases of numbers, you can check the documention on how to use them in Racket!</p>
+        <p>Summation (+) will add every number together.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">+ 1</span>) --> Returns 1</p></li>
+            <li><p>(<span class="t-b">+ 2.5 4</span>) --> Returns 6.5</p></li>
+            <li><p>(<span class="t-b">+ 1 2 -4</span>) --> Returns -1</p></li>
+        </ul>
+        <p>Subtraction (-) will reduce all following numbers from the first number.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">- 1</span>) --> Returns 1</p></li>
+            <li><p>(<span class="t-b">- 5 2.5</span>) --> Returns 2.5</p></li>
+            <li><p>(<span class="t-b">- 5 1 1 1</span>) --> ReturnsGives 2</p></li>
+        </ul>
+        <p>Multiplication (*) will multiply all numbers with each other.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">* 1</span>) --> Returns 1</p></li>
+            <li><p>(<span class="t-b">* 2 2.5</span>) --> Returns 5.0</p></li>
+            <li><p>(<span class="t-b">* 1 2 3 4 5</span>) --> Returns 120</p></li>
+        </ul>
+        <p>Division (/) will divide the first number by all following numbers.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">/ 1</span>) --> Returns 1</p></li>
+            <li><p>(<span class="t-b">/ 6 3.0</span>) --> Returns 2.0</p></li>
+            <li><p>(<span class="t-b">/ 120 4 3 2</span>) --> Returns 5 (because 120/(4*3*2) = 5)</p></li>
+        </ul>
+        <p>Inequality signs will compare all inputs in order, and return a boolean. All of these comparisons work with 2+ numbers too!</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">= 5 5</span>) --> Returns #true</p></li>
+            <li><p>(<span class="t-b">= 3 5</span>) --> Returns #false</p></li>
+            <li><p>(<span class="t-b">> 10 5</span>) --> Returns #true</p></li>
+            <li><p>(<span class="t-b">> 2 5</span>) --> Returns #false</p></li>
+            <li><p>(<span class="t-b">&#60; 5 10</span>) --> Returns #true</p></li>
+            <li><p>(<span class="t-b">&#60; 5 2</span>) --> Returns #false</p></li>
+            <li><p>(<span class="t-b">>= 5 5 2</span>) --> Returns #true</p></li>
+            <li><p>(<span class="t-b">>= 5 6 2</span>) --> Returns #false</p></li>
+            <li><p>(<span class="t-b">&#60;= 2 2 4 4</span>) --> Returns #true</p></li>
+            <li><p>(<span class="t-b">&#60;= 2 4 2 4</span>) --> Returns #false</p></li>
+        </ul>
+        <p>It is possible to check if a number is positive, zero or negative.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">positive? 5</span>) --> Returns #true</p></li>
+            <li><p>(<span class="t-b">zero? 5</span>) --> Returns #false</p></li>
+            <li><p>(<span class="t-b">negative? 5</span>) --> Returns #false</p></li>
+        </ul>
+        <p>The following functions add or subtract 1 from a given number. You can also use the plus or minus signs, but I find these cleaner in code.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">add1 5</span>) --> Returns 6</p></li>
+            <li><p>(<span class="t-b">sub1 5</span>) --> Returns 4</p></li>
+        </ul>
+        <p>You can use one of the following for checks. They require the testing library!</p>
+        <p>What is the difference between the two? Well, 8/2 is an integer operation with a pretty concrete answer. It is 4. For computers, those operations are also very simple. When it comes to non-integers, it is a bit difference. Imagine you are dividing 7.0 by 2.0, then you would say that the answer would be 3.5 without a doubt. Simply put, computers are weird and that is not always the solution they find. It is very likely that the answer will be something like 3.500000004 to this question. It is a close enough answer, but not exactly the correct one. Therefore, instead of checking for the correct answer, you need to check for a range of answers. You first need to set a small "tolerance" value such as 1/10000. In the below <span class="t-b">check-within</span> example, the test will pass as long as the result is between "3.5 - 1/10000" and "3.5 + 1/10000"</p>
+        <ul class="code">
+            <li><p><span class="t-g">;; In order to check if an integer operation is correct.</span></p></li>
+            <li><p>(<span class="t-b">check-expect </span>(<span class="t-b">/ 8 2</span>)<span class="t-b"> 4</span>) --> Test passes!</p></li>
+            <li><p><span class="t-g">;; In order to check if a non-integer operation is correct.</span></p></li>
+            <li><p>(<span class="t-b">check-within </span>(<span class="t-b">/ 7.0 2.0</span>)<span class="t-b"> 3.5 1/10000</span>) --> Test passes!</p></li>
+        </ul>
+        <br>
+        <h3>String</h3>
+        <p>A string is a sequence of characters; for instance, a text. In order to declare that something is a string, you need to surround it with quotation marks. For example: "Hello", "Hello world!" and "123". Don't forget that a space (" ") or an empty string ("") would make valid strings, of length 1 and 0 respectively!</p>
+        <p>As a string uses a quotation mark to mark where the string starts and ends, you cannot use a quotation mark inside a string. You can instead mark the quotation mark with a backslash (\") as an <i>escape character</i>. For instance: "He said "Hi!"" will not be a valid string, while "He said \"Hi!\"" will be!</p>
+        <p>The sum operation for string is called append.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">string-append</span><span class="t-l"> "Hello" " world" "!"</span>) --> Returns "Hello world!"</p></li>
+            <li><p>(<span class="t-b">string-append</span><span class="t-l"> "" " " "a"</span>) --> Returns " a"</p></li>
+        </ul>
+        <p>You can check if two (or more) strings are the same.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">string=?</span><span class="t-l"> "Hello" " world"</span>) --> Returns #false</p></li>
+            <li><p>(<span class="t-b">string=?</span><span class="t-l"> "Hello" "Hello" "Hello"</span>) --> Returns #true</p></li>
+        </ul>
+        <p>You can check the length of a string.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">string-length</span><span class="t-l"> "Hello"</span>) --> Returns 5</p></li>
+            <li><p>(<span class="t-b">string-length</span><span class="t-l"> ""</span>) --> Returns 0</p></li>
+        </ul>
+        <p>You can get the character of a string at an index. Don't forget that counting starts from index 0.</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">string-ref</span><span class="t-l"> "ABCDEF"</span><span class="t-b"> 2</span>) --> Returns #\C</p></li>
+        </ul>
+        <p>You can also get a part of a string (called substring) from a string. You need to specify where the substring starts and ends. The latter index is excluded!</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">substring</span><span class="t-l"> "ABCDEF"</span><span class="t-b"> 2 4</span>) --> Returns "CD"</p></li>
+            <li><p>(<span class="t-b">substring</span><span class="t-l"> "ABCDEF"</span><span class="t-b"> 1 5</span>) --> Returns "BCDE"</p></li>
+            <li><p><span class="t-g">;; To get the rest of a string, omit the second number.</span></p></li>
+            <li><p>(<span class="t-b">substring</span><span class="t-l"> "ABCDEF"</span><span class="t-b"> 2 5</span>) --> Returns "CDEF"</p></li>
+        </ul>
+        <p>You can use <span class="t-b">check-expect</span> for checks. They require the testing library!</p>
+        <ul class="code">
+            <li><p>(<span class="t-b">check-expect </span>(<span class="t-b">string-append </span><span class="t-l">"a" "b"</span>)<span class="t-l"> "ab"</span>) --> Test passes!</p></li>
+        </ul>
+        <br><br><br><br><br>
+        <p>To be updated soon...</p>
+        <br><br>
+    </mat-tab>
+    <mat-tab label="Coming soon"><br>
+        <p>Here will be interactive miniquizzes in the future</p>
+    </mat-tab>
+  </mat-tab-group>

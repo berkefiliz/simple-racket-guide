@@ -37,32 +37,11 @@ export class AppComponent {
   ];
 
   COURSES = [
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
+    {title: "Variable Types", link: "variable-types"},
   ];
 
   EXERCISES = [
     {title: "Racket Basics", link: "exercise1"},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
-    {title: "Placeholder", link: ""},
   ];
 
 }
